@@ -3,638 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Taylor & Cruz Dental — Clínica dental de alta calidad en Moravia y Nicoya, Costa Rica. Ortodoncia, estética dental, implantes y odontopediatría.">
-  <title>Taylor & Cruz Dental</title>
+  <meta name="description" content="Taylor & Cruz Dental — Clínica dental en Moravia y Nicoya. Atención moderna, cercana y tratamientos personalizados para cuidar tu sonrisa.">
+  <title>Taylor & Cruz Dental | Rediseño moderno</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-redesign.css">
 </head>
 <body>
-
-<!-- ══════════════════════════
-     NAVIGATION
-══════════════════════════ -->
-<header id="nav">
-  <div class="container nav-inner">
-    <button class="nav-logo" onclick="scrollTo('#hero')">
-      Taylor <span class="gold">&amp;</span> Cruz
-    </button>
-
-    <nav>
-      <ul class="nav-links">
-        <li><button onclick="scrollTo('#hero')">Inicio</button></li>
-        <li><button onclick="scrollTo('#services')">Servicios</button></li>
-        <li><button onclick="scrollTo('#testimonials')">Testimonios</button></li>
-        <li><button onclick="scrollTo('#locations')">Ubicaciones</button></li>
-      </ul>
-    </nav>
-
-    <div class="nav-actions">
-      <button class="nav-icon-btn" aria-label="Buscar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  <header class="site-header" id="siteHeader">
+    <div class="shell nav-shell">
+      <button class="brand" onclick="scrollToSection('#hero')" aria-label="Ir al inicio">
+        <span class="brand-mark">T<span>&amp;</span>C</span>
+        <span class="brand-text">Taylor &amp; Cruz Dental</span>
       </button>
-      <button id="menu-btn" class="nav-icon-btn nav-menu-btn" aria-label="Menú">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" class="btn-primary nav-cta">
-        Contacto
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </a>
+
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <button onclick="scrollToSection('#services')">Servicios</button>
+        <button onclick="scrollToSection('#experience')">Experiencia</button>
+        <button onclick="scrollToSection('#locations')">Ubicaciones</button>
+        <button onclick="scrollToSection('#contact')">Contacto</button>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-cta" href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener">Agendar</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-panel">
+      <button onclick="scrollToSection('#services')">Servicios</button>
+      <button onclick="scrollToSection('#experience')">Experiencia</button>
+      <button onclick="scrollToSection('#locations')">Ubicaciones</button>
+      <button onclick="scrollToSection('#contact')">Contacto</button>
+      <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener">Agendar por WhatsApp</a>
     </div>
   </div>
-</header>
 
-<!-- Mobile Drawer -->
-<div id="mobile-backdrop">
-  <div id="mobile-drawer">
-    <div style="display:flex;justify-content:flex-end;">
-      <button id="close-menu" class="nav-icon-btn" aria-label="Cerrar">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <ul class="drawer-nav">
-      <li><button onclick="scrollTo('#hero');closeMobileMenu()">Inicio</button></li>
-      <li><button onclick="scrollTo('#services');closeMobileMenu()">Servicios</button></li>
-      <li><button onclick="scrollTo('#testimonials');closeMobileMenu()">Testimonios</button></li>
-      <li><button onclick="scrollTo('#locations');closeMobileMenu()">Ubicaciones</button></li>
-    </ul>
-    <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener"
-       class="btn-primary" style="margin-top:2rem;">
-      Contacto
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-    </a>
-  </div>
-</div>
-
-<main>
-
-<!-- ══════════════════════════
-     HERO
-══════════════════════════ -->
-<section id="hero">
-  <div class="container hero-inner">
-    <div class="hero-grid">
-
-      <!-- Left: Text -->
-      <div class="hero-text">
-        <h1 class="hero-h1 reveal">
-          Cuidamos tu<br>
-          <em class="font-italic-emphasis">Sonrisa</em>, una visita<br>
-          a la vez.
-        </h1>
-        <p class="hero-sub reveal delay-1">
-          Tu sonrisa refleja confianza, salud y bienestar. En Taylor &amp; Cruz Dental
-          combinamos tecnología moderna, atención cercana y estética dental para cuidar cada detalle.
-        </p>
-        <div class="hero-actions reveal delay-2">
-          <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" class="btn-primary">
-            Agendar cita
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
-          <button class="text-link" onclick="scrollTo('#services')">Ver servicios</button>
-        </div>
-        <div class="hero-trust reveal delay-3">
-          <div class="trust-item"><span class="trust-dot"></span>Ortodoncia</div>
-          <div class="trust-item"><span class="trust-dot"></span>Estética Dental</div>
-          <div class="trust-item"><span class="trust-dot"></span>Implantes</div>
-          <div class="trust-item"><span class="trust-dot"></span>Odontopediatría</div>
-        </div>
-      </div>
-
-      <!-- Right: Image -->
-      <div class="hero-image-wrap">
-        <div class="hero-img-container reveal-scale">
-          <img src="img/hero-portrait.jpg" alt="Paciente sonriendo con confianza en Taylor & Cruz Dental" loading="eager">
-        </div>
-        <div class="glass-card hero-float-card reveal delay-4">
-          <p class="float-brand">Taylor &amp; Cruz Care</p>
-          <ul class="float-list">
-            <li><span class="float-dot"></span>Estética dental</li>
-            <li><span class="float-dot"></span>Ortodoncia</li>
-            <li><span class="float-dot"></span>Tecnología moderna</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════
-     ABOUT
-══════════════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="marker">01</span>
-      <div class="divider"></div>
-      <span class="section-label">Sobre la clínica</span>
-    </div>
-
-    <div class="about-statement reveal">
-      <p>
-        Creamos relaciones duraderas — basadas en
-        <em class="font-italic-emphasis">confianza y cuidado</em>.
-        Nuestro equipo se compromete a que cada visita sea cómoda,
-        profesional y pensada para ti.
-      </p>
-    </div>
-
-    <div class="about-images reveal delay-1">
-      <div class="about-img-stack">
-        <div class="about-img about-img-1"><img src="img/about-img-1.jpg" alt="Clínica dental imagen 1" loading="lazy"></div>
-        <div class="about-img about-img-2"><img src="img/about-img-2.jpg" alt="Clínica dental imagen 2" loading="lazy"></div>
-        <div class="about-img about-img-3"><img src="img/about-img-3.jpg" alt="Clínica dental imagen 3" loading="lazy"></div>
-      </div>
-      <button class="about-img-arrow" aria-label="Ver más">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </button>
-    </div>
-
-    <div class="about-stats" id="about-stats">
-      <div class="stat-item reveal">
-        <div class="stat-number">+<span class="counter" data-target="437">0</span></div>
-        <p>pacientes conectados</p>
-      </div>
-      <div class="stat-divider reveal delay-1"></div>
-      <div class="stat-item reveal delay-1">
-        <div class="stat-number"><span class="counter" data-target="2">0</span></div>
-        <p>sedes en Costa Rica</p>
-      </div>
-      <div class="stat-divider reveal delay-2"></div>
-      <div class="stat-item reveal delay-2">
-        <div class="stat-number"><span class="counter" data-target="4.9" data-decimal="1">0</span></div>
-        <p>experiencia del paciente</p>
-      </div>
-      <div class="stat-divider reveal delay-3"></div>
-      <div class="stat-item reveal delay-3">
-        <div class="stat-number">+<span class="counter" data-target="8">0</span></div>
-        <p>servicios dentales</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════
-     SERVICES
-══════════════════════════ -->
-<section id="services">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="marker">02</span>
-      <div class="divider"></div>
-      <span class="section-label">Nuestros Servicios</span>
-    </div>
-
-    <div class="services-grid">
-      <!-- List -->
-      <div class="services-list">
-        <div class="service-item reveal"><span class="service-num">01</span><span class="service-name">Ortodoncia</span></div>
-        <div class="service-item reveal delay-1"><span class="service-num">02</span><span class="service-name">Odontología estética</span></div>
-        <div class="service-item reveal delay-2"><span class="service-num">03</span><span class="service-name">Restauración dental</span></div>
-        <div class="service-item reveal delay-3"><span class="service-num">04</span><span class="service-name">Odontopediatría</span></div>
-        <div class="service-item reveal delay-4"><span class="service-num">05</span><span class="service-name">Implantes</span></div>
-        <div class="service-item reveal delay-5"><span class="service-num">06</span><span class="service-name">Endodoncia</span></div>
-      </div>
-
-      <!-- Center Image -->
-      <div class="services-img reveal-scale">
-        <img src="img/services-main.jpg" alt="Dentista atendiendo paciente en clínica moderna" loading="lazy">
-      </div>
-
-      <!-- Info Card -->
-      <div class="services-card reveal-xr">
-        <h3>Una sonrisa segura cambia todo.</h3>
-        <p>En Taylor &amp; Cruz Dental cuidamos tu salud oral con tratamientos personalizados que realzan tu sonrisa mientras preservan su belleza natural y funcionalidad.</p>
-        <div class="team-avatars">
-          <div class="avatar-stack">
-            <div class="avatar"><img src="img/team-avatar-1.jpg" alt="Miembro del equipo 1" loading="lazy"></div>
-            <div class="avatar"><img src="img/team-avatar-2.jpg" alt="Miembro del equipo 2" loading="lazy"></div>
-            <div class="avatar"><img src="img/team-avatar-3.jpg" alt="Miembro del equipo 3" loading="lazy"></div>
+  <main>
+    <section class="hero" id="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Clínica dental en Moravia y Nicoya</p>
+          <h1>Cuidado dental claro, moderno y diseñado alrededor de tu sonrisa.</h1>
+          <p class="hero-lead">Atención profesional, tecnología actual y una experiencia más humana para tratamientos de estética, ortodoncia, implantes y odontopediatría.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener">Agendar cita</a>
+            <button class="btn btn-light" onclick="scrollToSection('#services')">Explorar servicios</button>
           </div>
-          <span class="team-label">Nuestro equipo dental</span>
+          <div class="hero-metrics" aria-label="Datos clave de la clínica">
+            <div><strong>2</strong><span>Sedes</span></div>
+            <div><strong>4.9</strong><span>Experiencia</span></div>
+            <div><strong>+8</strong><span>Servicios</span></div>
+          </div>
         </div>
-        <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1.5rem;width:fit-content;">
-          Leer más
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ══════════════════════════
-     PEDIATRIC
-══════════════════════════ -->
-<section id="pediatric">
-  <div class="container">
-    <div class="pediatric-grid">
-      <!-- Left: Text -->
-      <div class="pediatric-text reveal-x">
-        <span class="section-label">Odontopediatría</span>
-        <h2>Cuidamos la sonrisa de tus pequeños</h2>
-        <p>Creamos una experiencia tranquila, amable y positiva para que los niños se sientan seguros desde su primera visita.</p>
-        <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" class="btn-primary" style="margin-top:2rem;">
-          Agendar cita infantil
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-        </a>
-      </div>
-
-      <!-- Right: Image -->
-      <div class="pediatric-image reveal-xr">
-        <div class="pediatric-shapes">
-          <div class="tooth-shape ts-1"></div>
-          <div class="tooth-shape ts-2"></div>
-          <div class="tooth-shape ts-3"></div>
+        <div class="hero-media reveal delay-1">
+          <figure class="hero-photo">
+            <img src="img/hero-portrait.jpg" alt="Paciente sonriendo con confianza en Taylor & Cruz Dental" loading="eager">
+          </figure>
+          <aside class="floating-note" aria-label="Servicios destacados">
+            <span>Tratamientos destacados</span>
+            <p>Ortodoncia · Estética dental · Implantes</p>
+          </aside>
         </div>
-        <div class="pediatric-img">
+      </div>
+    </section>
+
+    <section class="intro" id="experience">
+      <div class="shell intro-grid">
+        <div class="section-kicker reveal">
+          <span>01</span>
+          <p>Experiencia</p>
+        </div>
+        <div class="intro-content reveal delay-1">
+          <h2>Una clínica que se siente cercana, ordenada y confiable desde la primera visita.</h2>
+          <p>Cada tratamiento empieza con una conversación clara. Te explicamos opciones, tiempos y cuidados para que tomes decisiones con seguridad.</p>
+        </div>
+      </div>
+
+      <div class="shell image-strip reveal delay-2" aria-label="Galería de clínica dental">
+        <figure><img src="img/about-img-1.jpg" alt="Detalle de atención dental" loading="lazy"></figure>
+        <figure><img src="img/about-img-2.jpg" alt="Espacio clínico de Taylor & Cruz Dental" loading="lazy"></figure>
+        <figure><img src="img/about-img-3.jpg" alt="Experiencia dental personalizada" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="shell section-heading reveal">
+        <p class="eyebrow">Servicios</p>
+        <h2>Tratamientos para distintas etapas de tu sonrisa.</h2>
+      </div>
+
+      <div class="shell services-layout">
+        <div class="service-list reveal">
+          <article class="service-row">
+            <span>01</span>
+            <div><h3>Ortodoncia</h3><p>Alineación funcional y estética con seguimiento personalizado.</p></div>
+          </article>
+          <article class="service-row">
+            <span>02</span>
+            <div><h3>Estética dental</h3><p>Diseño de sonrisa, blanqueamiento y mejoras naturales.</p></div>
+          </article>
+          <article class="service-row">
+            <span>03</span>
+            <div><h3>Restauración dental</h3><p>Recuperación de piezas con enfoque conservador y durable.</p></div>
+          </article>
+          <article class="service-row">
+            <span>04</span>
+            <div><h3>Odontopediatría</h3><p>Visitas tranquilas y positivas para niños y familias.</p></div>
+          </article>
+          <article class="service-row">
+            <span>05</span>
+            <div><h3>Implantes y endodoncia</h3><p>Soluciones especializadas para salud, función y confianza.</p></div>
+          </article>
+        </div>
+
+        <figure class="services-visual reveal delay-1">
+          <img src="img/services-main.jpg" alt="Dentista atendiendo paciente en clínica moderna" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="feature feature-soft" id="kids">
+      <div class="shell feature-grid">
+        <figure class="feature-image reveal">
           <img src="img/pediatric-child.jpg" alt="Niño sonriendo felizmente" loading="lazy">
+        </figure>
+        <div class="feature-copy reveal delay-1">
+          <p class="eyebrow">Odontopediatría</p>
+          <h2>Primeras visitas sin presión, con paciencia y acompañamiento.</h2>
+          <p>Diseñamos una experiencia amable para que los niños construyan confianza con el cuidado dental desde temprano.</p>
+          <a class="btn btn-dark" href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener">Agendar cita infantil</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ══════════════════════════
-     COSMETIC
-══════════════════════════ -->
-<section id="cosmetic">
-  <div class="container">
-    <div class="cosmetic-wrap reveal-scale">
-      <img src="img/cosmetic-smile.jpg" alt="Sonrisa perfecta siendo examinada con espejo dental" class="cosmetic-img" loading="lazy">
-      <div class="cosmetic-overlay"></div>
-      <div class="cosmetic-text-wrap">
-        <div class="cosmetic-gold-line gold-line-animate"></div>
+    <section class="split-showcase">
+      <div class="shell split-grid">
+        <article class="showcase-card reveal">
+          <img src="img/cosmetic-smile.jpg" alt="Sonrisa perfecta siendo examinada con espejo dental" loading="lazy">
+          <div>
+            <p class="eyebrow">Estética dental</p>
+            <h2>Resultados visibles, naturales y bien guiados.</h2>
+          </div>
+        </article>
+        <article class="showcase-card showcase-card-dark reveal delay-1">
+          <img src="img/tech-3d-tooth.jpg" alt="Modelo 3D de diente - tecnología dental moderna" loading="lazy">
+          <div>
+            <p class="eyebrow">Tecnología</p>
+            <h2>Diagnóstico preciso para decisiones más claras.</h2>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="shell testimonials-grid">
+        <div class="testimonial-media reveal">
+          <img id="testMainImg" src="img/testimonial-portrait.jpg" alt="Paciente satisfecho" loading="lazy">
+          <img id="testSecondaryImg" src="img/testimonial-secondary.jpg" alt="Experiencia en la clínica" loading="lazy">
+        </div>
+        <div class="testimonial-copy reveal delay-1">
+          <p class="eyebrow">Historias reales</p>
+          <blockquote id="testQuote"></blockquote>
+          <p id="testAuthor" class="testimonial-author"></p>
+          <div class="testimonial-controls">
+            <button id="prevTest" aria-label="Testimonio anterior">←</button>
+            <span id="testCounter"></span>
+            <button id="nextTest" aria-label="Siguiente testimonio">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations" id="locations">
+      <div class="shell section-heading reveal">
+        <p class="eyebrow">Ubicaciones</p>
+        <h2>Agenda en la sede que te quede mejor.</h2>
+      </div>
+      <div class="shell location-grid">
+        <article class="location-card reveal">
+          <span class="location-tag">Moravia</span>
+          <h3>San José</h3>
+          <p>+506 2297-5591</p>
+          <a class="btn btn-light" href="https://wa.me/50622975591" target="_blank" rel="noopener">Contactar Moravia</a>
+        </article>
+        <article class="location-card reveal delay-1">
+          <span class="location-tag">Nicoya</span>
+          <h3>Guanacaste</h3>
+          <p>+506 2685-5746</p>
+          <a class="btn btn-light" href="https://wa.me/50626855746" target="_blank" rel="noopener">Contactar Nicoya</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell contact-card reveal">
         <div>
-          <h2>
-            Ilumina tu <em class="font-italic-emphasis">sonrisa</em> con
-            confianza y cuidado
-          </h2>
-          <p>El blanqueamiento dental profesional ayuda a mejorar el tono de tus dientes de forma segura, guiada y personalizada.</p>
+          <p class="eyebrow">Contacto</p>
+          <h2>¿Listo para cuidar tu sonrisa con más claridad?</h2>
+          <p>Escríbenos y te ayudamos a coordinar tu valoración.</p>
         </div>
+        <a class="btn btn-dark" href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>Taylor &amp; Cruz Dental</strong>
+        <p>Cuidado dental moderno en Costa Rica.</p>
+      </div>
+      <div>
+        <span>Servicios</span>
+        <p>Ortodoncia · Estética · Implantes · Odontopediatría</p>
+      </div>
+      <div>
+        <span>Instagram</span>
+        <a href="https://instagram.com/taylorycruzdental" target="_blank" rel="noopener">@taylorycruzdental</a>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ══════════════════════════
-     TECHNOLOGY
-══════════════════════════ -->
-<section id="technology">
-  <div class="container">
-    <div class="tech-grid">
-      <!-- Left: Image -->
-      <div class="tech-img reveal-x">
-        <img src="img/tech-3d-tooth.jpg" alt="Modelo 3D de diente - tecnología dental moderna" loading="lazy">
-      </div>
+  <a class="floating-whatsapp" href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg width="25" height="25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
-      <!-- Right: Text -->
-      <div class="tech-text reveal-xr">
-        <h2>Tecnología moderna para cuidar cada detalle</h2>
-        <p>Con herramientas actuales y un enfoque preventivo, diagnosticamos y tratamos tu sonrisa con precisión, comodidad y confianza.</p>
-        <div class="tech-pill reveal delay-2">
-          <span>¿Necesitas una valoración?</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" color="#8FC7D6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+    const header = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-<!-- ══════════════════════════
-     TESTIMONIALS
-══════════════════════════ -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="marker">03</span>
-      <div class="divider"></div>
-      <span class="section-label">Testimonios</span>
-    </div>
-
-    <div class="testimonials-grid" style="margin-top:3rem;">
-      <!-- Images -->
-      <div class="testimonial-images reveal">
-        <div class="testimonial-main-img">
-          <img id="test-main-img" src="img/testimonial-portrait.jpg" alt="Paciente satisfecho" loading="lazy">
-        </div>
-        <div class="testimonial-secondary-img">
-          <img id="test-sec-img" src="img/testimonial-secondary.jpg" alt="Experiencia en la clínica" loading="lazy">
-        </div>
-      </div>
-
-      <!-- Quote -->
-      <div id="quote-wrap" class="testimonial-quote-wrap reveal delay-2">
-        <div class="quote-dash">&mdash;</div>
-        <blockquote id="test-quote" class="quote-text"></blockquote>
-        <p id="test-author" class="quote-author"></p>
-        <div class="quote-rating">
-          <span id="test-rating" class="rating-num"></span>
-          <span class="rating-slash">/ 5</span>
-          <div id="test-stars" class="stars"></div>
-        </div>
-        <div class="testimonial-nav">
-          <button class="text-link" id="prev-slide">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-            Anterior
-          </button>
-          <span id="slide-counter" class="counter-text" style="font-size:0.75rem;color:#4F5F6F;"></span>
-          <button class="text-link" id="next-slide">
-            Siguiente
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════
-     LOCATIONS
-══════════════════════════ -->
-<section id="locations">
-  <div class="container">
-    <h2 class="locations-headline reveal">Agenda tu cita en Moravia o Nicoya</h2>
-
-    <div class="locations-cards">
-      <div class="location-card reveal">
-        <div class="location-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <h3>Moravia, San José</h3>
-        <div class="location-phone">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <span>+506 2297-5591</span>
-        </div>
-        <a href="https://wa.me/50622975591" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:1.5rem;">
-          Contactar Moravia
-        </a>
-      </div>
-
-      <div class="location-card reveal delay-2">
-        <div class="location-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <h3>Nicoya, Guanacaste</h3>
-        <div class="location-phone">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <span>+506 2685-5746</span>
-        </div>
-        <a href="https://wa.me/50626855746" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:1.5rem;">
-          Contactar Nicoya
-        </a>
-      </div>
-    </div>
-
-    <div class="locations-cta reveal delay-3">
-      <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener">
-        Escríbanos por WhatsApp
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════
-     FINAL CTA
-══════════════════════════ -->
-<section id="final-cta">
-  <div class="container cta-inner">
-    <h2 class="reveal">¿Listo para transformar tu sonrisa?</h2>
-    <p class="reveal delay-1">Agenda tu valoración hoy. Nuestro equipo está listo para cuidar de ti.</p>
-    <div class="cta-buttons reveal delay-2">
-      <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" class="cta-btn-white">
-        Agendar cita
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-      </a>
-      <a href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" class="cta-btn-ghost">
-        Contactar por WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ══════════════════════════
-     FOOTER
-══════════════════════════ -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Brand -->
-      <div class="footer-brand reveal">
-        <span>Taylor <span class="gold">&amp;</span> Cruz</span>
-        <span class="sub">Dental</span>
-        <p class="tagline">Ilumina tu <em class="font-italic-emphasis">sonrisa</em> con confianza y cuidado</p>
-      </div>
-
-      <!-- General -->
-      <div class="footer-col reveal delay-1">
-        <h4>General</h4>
-        <ul>
-          <li><button onclick="scrollTo('#hero')">Inicio</button></li>
-          <li><button onclick="scrollTo('#about')">Sobre nosotros</button></li>
-          <li><button onclick="scrollTo('#services')">Servicios</button></li>
-          <li><button onclick="scrollTo('#testimonials')">Testimonios</button></li>
-        </ul>
-      </div>
-
-      <!-- Services -->
-      <div class="footer-col reveal delay-2">
-        <h4>Servicios</h4>
-        <ul>
-          <li><span>Ortodoncia</span></li>
-          <li><span>Estética dental</span></li>
-          <li><span>Implantes</span></li>
-          <li><span>Odontopediatría</span></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="footer-col reveal delay-3">
-        <h4>Contacto</h4>
-        <ul>
-          <li><span>Moravia: +506 2297-5591</span></li>
-          <li><span>Nicoya: +506 2685-5746</span></li>
-          <li>
-            <a href="https://instagram.com/taylorycruzdental" target="_blank" rel="noopener">
-              @taylorycruzdental
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom reveal">
-      <p class="footer-copy">&copy; 2026 Taylor &amp; Cruz Dental</p>
-      <div class="social-links">
-        <a href="https://instagram.com/taylorycruzdental" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Floating WhatsApp -->
-<a id="floating-wa" href="https://wa.me/message/ELXYAE7PBGAWP1" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<script>
-/* ─── SMOOTH SCROLL ─── */
-function scrollTo(target) {
-  const el = document.querySelector(target);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
-/* ─── NAV SCROLL STATE ─── */
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
-
-/* ─── MOBILE MENU ─── */
-const backdrop  = document.getElementById('mobile-backdrop');
-const menuBtn   = document.getElementById('menu-btn');
-const closeBtn  = document.getElementById('close-menu');
-
-menuBtn.addEventListener('click', () => backdrop.classList.add('open'));
-closeBtn.addEventListener('click', closeMobileMenu);
-backdrop.addEventListener('click', e => { if (e.target === backdrop) closeMobileMenu(); });
-function closeMobileMenu() { backdrop.classList.remove('open'); }
-
-/* ─── SCROLL REVEAL ─── */
-const revealEls = document.querySelectorAll('.reveal, .reveal-x, .reveal-xr, .reveal-scale');
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
+    function scrollToSection(target) {
+      const section = document.querySelector(target);
+      if (!section) return;
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMenu();
     }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => revealObs.observe(el));
 
-/* Gold line cosmetic animation */
-const goldLineEl = document.querySelector('.gold-line-animate');
-const goldObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); goldObs.unobserve(e.target); }
-  });
-}, { threshold: 0.3 });
-if (goldLineEl) goldObs.observe(goldLineEl);
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
 
-/* ─── STAT COUNTERS ─── */
-function animateCounter(el) {
-  const target   = parseFloat(el.dataset.target);
-  const decimal  = parseInt(el.dataset.decimal || '0');
-  const duration = 1400;
-  const start    = performance.now();
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-  function tick(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const value = easeOut(progress) * target;
-    el.textContent = decimal > 0 ? value.toFixed(decimal) : Math.round(value).toString();
-    if (progress < 1) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-}
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
-const statsSection = document.getElementById('about-stats');
-let countersDone = false;
-const statsObs = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting && !countersDone) {
-    countersDone = true;
-    document.querySelectorAll('.counter').forEach(animateCounter);
-  }
-}, { threshold: 0.3 });
-if (statsSection) statsObs.observe(statsSection);
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 20);
+    }, { passive: true });
 
-/* ─── TESTIMONIALS CAROUSEL ─── */
-const testimonials = [
-  {
-    quote: "La mejor experiencia dental que he tenido. El equipo fue profesional, amable y me hizo sentir en confianza desde el primer momento.",
-    author: "Paciente Taylor & Cruz Dental",
-    rating: 4.9,
-    mainImg: "img/testimonial-portrait.jpg",
-    secImg:  "img/testimonial-secondary.jpg"
-  },
-  {
-    quote: "Mi hijo siempre tuvo miedo al dentista, pero en Taylor & Cruz lo trataron con tanta paciencia que ahora le encanta ir. ¡Increíble!",
-    author: "María G. — Madre de familia",
-    rating: 5.0,
-    mainImg: "img/testimonial-portrait.jpg",
-    secImg:  "img/about-img-2.jpg"
-  },
-  {
-    quote: "El blanqueamiento superó mis expectativas. Resultados naturales y un equipo que realmente se preocupa por tu bienestar.",
-    author: "Carlos R. — Paciente estética dental",
-    rating: 4.8,
-    mainImg: "img/hero-portrait.jpg",
-    secImg:  "img/testimonial-secondary.jpg"
-  }
-];
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach((element) => revealObserver.observe(element));
 
-let activeSlide = 0;
-let autoTimer;
+    const testimonials = [
+      {
+        quote: 'La mejor experiencia dental que he tenido. El equipo fue profesional, amable y me hizo sentir en confianza desde el primer momento.',
+        author: 'Paciente Taylor & Cruz Dental',
+        mainImg: 'img/testimonial-portrait.jpg',
+        secondaryImg: 'img/testimonial-secondary.jpg'
+      },
+      {
+        quote: 'Mi hijo siempre tuvo miedo al dentista, pero lo trataron con tanta paciencia que ahora se siente tranquilo en sus visitas.',
+        author: 'María G. — Madre de familia',
+        mainImg: 'img/pediatric-child.jpg',
+        secondaryImg: 'img/about-img-2.jpg'
+      },
+      {
+        quote: 'El resultado fue natural y el proceso muy claro. Me explicaron cada paso antes de empezar.',
+        author: 'Carlos R. — Paciente estética dental',
+        mainImg: 'img/hero-portrait.jpg',
+        secondaryImg: 'img/cosmetic-smile.jpg'
+      }
+    ];
 
-function renderStars(rating) {
-  const full = Math.floor(rating);
-  let html = '';
-  for (let i = 0; i < 5; i++) {
-    html += `<svg class="${i < full ? 'star' : 'star-empty'}" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
-  }
-  return html;
-}
+    let activeTestimonial = 0;
+    const quote = document.getElementById('testQuote');
+    const author = document.getElementById('testAuthor');
+    const counter = document.getElementById('testCounter');
+    const mainImg = document.getElementById('testMainImg');
+    const secondaryImg = document.getElementById('testSecondaryImg');
 
-function updateTestimonial(index, animate) {
-  const t = testimonials[index];
-  const wrap = document.getElementById('quote-wrap');
+    function renderTestimonial(index) {
+      const item = testimonials[index];
+      quote.textContent = '“' + item.quote + '”';
+      author.textContent = item.author;
+      counter.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(testimonials.length).padStart(2, '0');
+      mainImg.src = item.mainImg;
+      secondaryImg.src = item.secondaryImg;
+    }
 
-  if (animate) {
-    wrap.classList.add('fading');
-    setTimeout(() => {
-      applyTestimonial(t, index);
-      wrap.classList.remove('fading');
-    }, 280);
-  } else {
-    applyTestimonial(t, index);
-  }
-}
+    document.getElementById('prevTest').addEventListener('click', () => {
+      activeTestimonial = (activeTestimonial - 1 + testimonials.length) % testimonials.length;
+      renderTestimonial(activeTestimonial);
+    });
 
-function applyTestimonial(t, index) {
-  document.getElementById('test-quote').textContent  = '\u201C' + t.quote + '\u201D';
-  document.getElementById('test-author').textContent = t.author;
-  document.getElementById('test-rating').textContent = t.rating;
-  document.getElementById('test-stars').innerHTML    = renderStars(t.rating);
-  document.getElementById('test-main-img').src       = t.mainImg;
-  document.getElementById('test-sec-img').src        = t.secImg;
-  document.getElementById('slide-counter').textContent =
-    '(0' + (index + 1) + ' / 0' + testimonials.length + ')';
-}
+    document.getElementById('nextTest').addEventListener('click', () => {
+      activeTestimonial = (activeTestimonial + 1) % testimonials.length;
+      renderTestimonial(activeTestimonial);
+    });
 
-function goToSlide(index) {
-  activeSlide = (index + testimonials.length) % testimonials.length;
-  updateTestimonial(activeSlide, true);
-  resetTimer();
-}
-
-function resetTimer() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(() => goToSlide(activeSlide + 1), 6000);
-}
-
-document.getElementById('prev-slide').addEventListener('click', () => goToSlide(activeSlide - 1));
-document.getElementById('next-slide').addEventListener('click', () => goToSlide(activeSlide + 1));
-
-// Initialize
-updateTestimonial(0, false);
-resetTimer();
-</script>
+    renderTestimonial(activeTestimonial);
+  </script>
 </body>
 </html>
